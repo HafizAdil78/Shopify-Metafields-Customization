@@ -1,0 +1,37 @@
+{
+  "id": "cf711ee6-e2ff-49d9-9c3f-1e99d8f1d16a",
+  "name": "Shopify Metafields Customization",
+  "publisher": "Default Publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [{
+      "id": "ec255f57-31d0-4ca2-b751-f2fa7c745abb",
+      "name": "Shopify Connector",
+      "publisher": "Microsoft",
+     "version": "26.0.30643.33009" 
+    }],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "26.0.0.0",
+  "idRanges": [
+    {
+      "from": 60100,
+      "to": 60149
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": false,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
+  "runtime": "15.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}

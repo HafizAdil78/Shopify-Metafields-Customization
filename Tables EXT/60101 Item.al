@@ -6,6 +6,10 @@ tableextension 60101 "Item" extends Item
         {
             DataClassification = ToBeClassified;
         }
+        field(60100; "test-1"; Code[20])
+        {
+            DataClassification = ToBeClassified;
+        }
     }
 
     keys

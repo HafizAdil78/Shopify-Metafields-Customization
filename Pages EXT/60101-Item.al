@@ -8,6 +8,10 @@ pageextension 60101 "Item Card" extends "Item Card"
             {
                 ApplicationArea = all;
             }
+            field("test-1"; Rec."test-1")
+            {
+                ApplicationArea = All;
+            }
         }
     }
 
@@ -25,29 +29,41 @@ pageextension 60101 "Item Card" extends "Item Card"
                 trigger OnAction()
                 var
                     ShopifyProduct: Record "Shpfy Product";
-                    Code: Codeunit "Custom Shpfy Field Sync";
+                    CustomShpfyFieldSync: Codeunit "Custom Shpfy Field Sync";
                     shopisetup: Record "Shop Setup_DSSS";
                     ShopifyShop: Record "Shpfy Shop";
                 begin
                     shopisetup.Reset();
-                    shopisetup.Get();
-                    shopisetup.TestField(Shop);
+                    // shopisetup.Get();
+                    // shopisetup.TestField(Shop);
                     ShopifyShop.Reset();
-                    ShopifyShop.SetRange(Code, shopisetup.Shop);
+                    ShopifyShop.SetRange(Code, 'BUYSELL');
                     if ShopifyShop.FindFirst() then begin
                         if ShopifyShop."Product Metafields To Shopify" = true then begin
                             ShopifyProduct.Reset();
                             ShopifyProduct.SetRange("Shop Code", ShopifyShop.Code);
                             ShopifyProduct.SetRange("Item No.", Rec."No.");
                             if ShopifyProduct.FindFirst() then
-                                Code.SyncCustomFieldsToShopify(Rec, ShopifyProduct.Id);
+                                CustomShpfyFieldSync.SyncCustomFieldsToShopify(Rec, ShopifyProduct.Id);
                         end
                         else
                             Error('Please enable the Product Metafield syncing on Shop %1', ShopifyShop.Code);
                     end;
                 end;
             }
+            action("Sync Metafields")
+            {
+                ApplicationArea = All;
+                Caption = 'Sync Metafields to Shopify';
+                trigger OnAction()
+                var
+                    ShopifySync: Codeunit "Custom Shpfy Field Sync";
+                begin
+                    // ShopifySync.SyncProductMetafields(Rec);
+                end;
+            }
         }
+
     }
 
     var

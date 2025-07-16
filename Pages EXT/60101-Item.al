@@ -17,7 +17,22 @@ pageextension 60101 "Item Card" extends "Item Card"
                 ApplicationArea = all;
                 ToolTip = 'This is my custom field';
             }
+
+            field(test1; Rec.test1)
+            {
+                ApplicationArea = all;
+            }
+            field(test2; Rec.test2)
+            {
+                ApplicationArea = all;
+            }
+            field(test3; Rec.test3)
+            {
+                ApplicationArea = all;
+            }
         }
+
+
     }
 
     actions

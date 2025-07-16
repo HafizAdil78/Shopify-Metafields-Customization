@@ -14,6 +14,18 @@ tableextension 60101 "Item" extends Item
         {
             DataClassification = ToBeClassified;
         }
+        field(80101; "test1"; Text[50])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(80102; "test2"; Text[50])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(80103; "test3"; Text[50])
+        {
+            DataClassification = ToBeClassified;
+        }
     }
 
     keys

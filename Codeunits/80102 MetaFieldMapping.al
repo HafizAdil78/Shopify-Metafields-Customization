@@ -15,11 +15,30 @@ codeunit 60102 "MetaFieldMapping"
     begin
         Metafield.SetRange("Owner Type", Metafield."Owner Type"::Product);
         Metafield.SetRange("Owner ID", ShopifyProduct.Id);
-        Metafield.SetRange(Name, 'external');
-        if Metafield.FindFirst() then begin
-            Item."External Item No" := Metafield.Value;
-        end;
+        if Metafield.FindSet() then
+            repeat
 
+                case Metafield.Name of
+                    'external':
+                        begin
+                            Item."External Item No" := Metafield.Value;
+                        end;
+                    'test1':
+                        begin
+                            Item.test1 := Metafield.Value;
+                        end;
+                    'test2':
+                        begin
+                            Item.test2 := Metafield.Value;
+                        end;
+                    'test3':
+                        begin
+                            Item.test3 := Metafield.Value;
+                        end;
+
+                end;
+            until Metafield.Next() = 0;
+        Item.Modify();
     end;
 
     //mapping shopify metafield with Business central Custom Field..
@@ -32,12 +51,30 @@ codeunit 60102 "MetaFieldMapping"
     begin
         Metafield.SetRange("Owner Type", Metafield."Owner Type"::Product);
         Metafield.SetRange("Owner ID", ShopifyProduct.Id);
-        Metafield.SetRange(Name, 'external');
-        if Metafield.FindFirst() then begin
-            Item."External Item No" := Metafield.Value;
+        if Metafield.FindSet() then
+            repeat
 
-            Item.Modify();
-        end;
+                case Metafield.Name of
+                    'external':
+                        begin
+                            Item."External Item No" := Metafield.Value;
+                        end;
+                    'test1':
+                        begin
+                            Item.test1 := Metafield.Value;
+                        end;
+                    'test2':
+                        begin
+                            Item.test2 := Metafield.Value;
+                        end;
+                    'test3':
+                        begin
+                            Item.test3 := Metafield.Value;
+                        end;
+
+                end;
+            until Metafield.Next() = 0;
+        Item.Modify();
     end;
     //...........................................................................................................
 

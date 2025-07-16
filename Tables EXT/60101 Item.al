@@ -10,6 +10,10 @@ tableextension 60101 "Item" extends Item
         {
             DataClassification = ToBeClassified;
         }
+        field(80100; "External Item No"; Text[50])
+        {
+            DataClassification = ToBeClassified;
+        }
     }
 
     keys

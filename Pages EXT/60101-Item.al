@@ -12,6 +12,11 @@ pageextension 60101 "Item Card" extends "Item Card"
             {
                 ApplicationArea = All;
             }
+            field("External Item No"; Rec."External Item No")
+            {
+                ApplicationArea = all;
+                ToolTip = 'This is my custom field';
+            }
         }
     }
 

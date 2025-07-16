@@ -82,7 +82,9 @@ codeunit 60101 "Custom Shpfy Field Sync"
         Metafields.Add(MetafieldJson);
     end;
 
+
     var
         MetafieldJson: JsonObject;
-    //  cu_abc: Codeunit "Shpfy Metafield API";
+    // JsonHelper: Codeunit "Shpfy Json Helper";
+    //cu_abc: Codeunit "Shpfy Metafield API";
 }

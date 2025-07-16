@@ -18,9 +18,8 @@ codeunit 60102 "MetaFieldMapping"
         Metafield.SetRange(Name, 'external');
         if Metafield.FindFirst() then begin
             Item."External Item No" := Metafield.Value;
-
-            Item.Modify();
         end;
+
     end;
 
     //mapping shopify metafield with Business central Custom Field..
@@ -40,6 +39,7 @@ codeunit 60102 "MetaFieldMapping"
             Item.Modify();
         end;
     end;
+    //...........................................................................................................
 
     var
         myInt: Integer;
